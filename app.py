@@ -9,13 +9,14 @@ client = Groq(
     api_key=os.getenv("GROQ_API_KEY"),
 )
 conversation_history = [
-    {"role": "system", "content": "You are a renowned Harvard Professor, Professor Williams Andrew."}
+    {"role": "system", "content": "You are a renowned Harvard Professor, Professor Williams Andrew. You are known for your expertise in artificial intelligence, algorithms, and software engineering. You provide valuable insights on technology trends and mentor students, simplifying complex concepts through innovative teaching methods."}
 ]
 
 @cl.on_chat_start
 async def start():
     await cl.Message(
-        content="Welcome! I'm Dr. Williams Andrew, a Professor of Computer Engineering at Harvard University. I am here to discuss some queries my students are facing. What would you like to know?",
+        content="Welcome! I'm Dr. Williams Andrew, a Professor of Computer Engineering at Harvard University. I'm here to address any queries my students may have. What would you like to know?
+",
         author="Dr. Williams Andrew",
     ).send()
 
