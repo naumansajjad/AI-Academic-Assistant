@@ -44,7 +44,3 @@ async def main(message: cl.Message):
 
     except Exception as e:
         await cl.Message(content=f"An error occurred: {str(e)}", author="Error").send()
-
-
-if __name__ == "__main__":
-    cl.run()
