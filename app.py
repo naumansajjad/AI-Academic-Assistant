@@ -1,9 +1,13 @@
 import chainlit as cl
 from groq import Groq
 import os
+from dotenv import load_dotenv
 
-client=Groq(api_key=os.environ.get('GROQ_API_KEY'))
+load_dotenv()
 
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY"),
+)
 conversation_history = [
     {"role": "system", "content": "You are a renowned Harvard Professor, Professor Williams Andrew."}
 ]
